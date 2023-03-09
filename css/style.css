@@ -502,6 +502,12 @@ input[type="password"].success {
 .slider-text-container {
   margin-bottom: 50px;
 }
+.slider-text-container .slider-title {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 39px;
+  color: #252525;
+}
 .slider-container {
   /* overflow: hidden; */
   position: relative;
