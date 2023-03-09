@@ -1,0 +1,143 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.text-primary {
+  color: #29a643;
+}
+.text-danger {
+  color: #d51820;
+}
+
+.btn {
+  display: inline-block;
+  font-style: normal;
+  font-family: 'Bebas Neue', cursive;
+  padding: 6px 92px;
+  background: #29a643;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: rgba(41, 166, 67, 0.7);
+  transition: all ease-in-out 0.3s;
+}
+
+.price-up {
+  color: #b1ffc2;
+}
+.price-down {
+  color: #ffa3a6;
+}
+
+.line-section {
+  width: 100vw;
+  background: #1e1e1e;
+}
+
+/* article grid-icons styling */
+.griddollar-icon,
+.gridtech-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.gridspeed-icon {
+  width: 205px;
+  height: 205px;
+}
+
+.gridpricing-icon {
+  height: 90px;
+  width: 90px;
+}
+
+/* gridbox base-styling */
+.gridbox {
+  background: #0b0819;
+  backdrop-filter: blur(45px);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 58px 51px;
+}
+.gridbox-content--line {
+  width: 50px;
+  height: 2px;
+  background-color: #29a643;
+  margin: 25px 0;
+}
+.gridbox-content {
+  max-width: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.gridbox-content .gridbox-content--title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+}
+.gridbox-content .gridbox-content--subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* registration icons styling */
+.table {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+}
+.table .icon {
+  width: 23px;
+  height: 30px;
+  color: #ffffff;
+}
+.text-table {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+.venue {
+  text-align: center;
+}
+
+.date,
+.time {
+  display: block;
+}
+
+.table .icon {
+  margin-bottom: 14px;
+}
+
+/* scrolling buttons */
