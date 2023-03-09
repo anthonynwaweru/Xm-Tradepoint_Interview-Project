@@ -9,6 +9,6 @@ This was a very interesting project to work on, as I got to learn quite alot.
 Some of the functionalies and responsiveness are not completely done, as I was pressed on time, but nevertheless a shipped product is better than an unfinished project as it can always be improved upon.
 
 # Stack used: 
-## HTML
-## CSS
-## JS
+HTML
+CSS
+JS
