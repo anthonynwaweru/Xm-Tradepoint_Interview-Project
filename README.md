@@ -8,6 +8,10 @@ This was a very interesting project to work on, as I got to learn quite alot.
 ## NOTES
 Some of the functionalies and responsiveness are not completely done, as I was pressed on time, but nevertheless a shipped product is better than an unfinished project as it can always be improved upon.
 
+#The slider is not fully complete
+#The article gridbox needs a bit of tweaking in-order to center while navigating through different screen sizes.
+These are just two among the few that needs to be worked on.
+
 # Stack used: 
 HTML
 CSS
