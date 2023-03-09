@@ -227,7 +227,7 @@
 @media screen and (max-width: 530px) {
   /* thumbnail slider */
   .slider-items .slider-item {
-    flex: 1 0 50%%;
+    flex: 1 0 25%;
   }
   footer {
     padding-left: 20px;
@@ -445,4 +445,4 @@ from max-width:479px  */
     justify-content: space-between;
     padding-top: 0;
   }
-} ;
+}

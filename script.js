@@ -280,7 +280,7 @@ const nextSlide = () => {
 const prevSlide = () => {
   slideIndex--;
   if (slideIndex < 0) {
-    slideIndex = slides.length--;
+    slideIndex = slides.length - 1;
   }
   const translateX = -slideIndex * slideWidth;
   sliderItems.style.transform = `translateX(${translateX}px)`;
