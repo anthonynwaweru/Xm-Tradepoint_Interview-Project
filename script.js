@@ -230,34 +230,11 @@ passwordInput.addEventListener("input", validatePassword);
 // Handle form submission and success message then reload 2secs after submission
 formSubmit.addEventListener("submit", function (e) {
   e.preventDefault();
-
-  const emailValue = email.value.trim();
-  const passwordValue = passwordInput.value.trim();
-
-  // Check if inputs are empty and add outline and error message if they are
-  if (emailValue === "") {
-    email.style.outline = "0.5px solid #D51820";
-    inValidEMail.style.visibility = "visible";
-  } else {
-    email.style.outline = "0.5px solid #29A643";
-    inValidEMail.style.visibility = "hidden";
-  }
-
-  if (passwordValue === "") {
-    passwordInput.style.outline = "0.5px solid #D51820";
-    length.classList.toggle("error", true);
-  } else {
-    validatePassword();
-  }
-
-  // Submit form if both inputs are not empty and valid
-  if (
-    emailValue !== "" &&
-    passwordValue !== "" &&
-    registerBtn.disabled !== true
-  ) {
+  if (email.value.trim() === "") validateEmail();
+  if (passwordInput.value.trim() === "") validatePassword();
+  if (!registerBtn.disabled) {
     successMessage.style.display = "flex";
-    setTimeout(function () {
+    setTimeout(() => {
       window.location.reload();
     }, 2000);
   }
