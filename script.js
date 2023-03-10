@@ -1,5 +1,4 @@
 "use strict";
-console.log("hello world");
 
 // DOM elements selection
 const passwordInput = document.getElementById("password");
@@ -26,7 +25,7 @@ const getCurrentPrices = async () => {
     const filteredCoinsData = data.filter((coin) =>
       coinsToUpdate.includes(coin.name)
     );
-    console.log(filteredCoinsData);
+    // console.log(filteredCoinsData);
     const coinsData = filteredCoinsData.map((coin) => {
       return {
         price: coin.price_usd,
@@ -36,7 +35,7 @@ const getCurrentPrices = async () => {
         nameid: coin.nameid,
       };
     });
-    console.log(coinsData);
+    // console.log(coinsData);
     // appending the prices, symbols, name, percentages before appending to it's main div
     const gridToAppend = `<div class="pricing-grid">
     <div class="pricing-grid--row">
@@ -169,11 +168,13 @@ getCurrentPrices();
 const registerBtn = document.querySelector(".cta-btn");
 const email = document.getElementById("email");
 const inValidEMail = document.querySelector(".validate-email");
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // email
-email.addEventListener("input", function () {
-  if (!emailPattern.test(email.value)) {
+const validateEmail = () => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email.value) || email.value.trim() === "") {
     email.style.outline = "0.5px solid #D51820";
     registerBtn.disabled = true;
     inValidEMail.style.visibility = "visible";
@@ -182,7 +183,9 @@ email.addEventListener("input", function () {
     registerBtn.disabled = false;
     inValidEMail.style.visibility = "hidden";
   }
-});
+};
+email.addEventListener("input", validateEmail);
+
 // password
 const validatePassword = () => {
   const password = passwordInput.value;
@@ -203,6 +206,10 @@ const validatePassword = () => {
     regexUppercase.test(password) &&
     regexSpecial.test(password);
   registerBtn.disabled = !isValid;
+  passwordInput.style.outline = `${
+    !isValid ? "0.5px solid #D51820" : "0.5px solid #29A643"
+  }`;
+
   // error
   length.classList.toggle("error", !regexLength.test(password));
   digits.classList.toggle("error", !regexNumber.test(password));
@@ -216,7 +223,7 @@ const validatePassword = () => {
   uppercase.classList.toggle("success", regexUppercase.test(password));
   special.classList.toggle("success", regexSpecial.test(password));
 
-  passwordInput.style.outline = "0.5px solid #29A643";
+  // passwordInput.style.outline = "0.5px solid #29A643";
 };
 passwordInput.addEventListener("input", validatePassword);
 
@@ -224,10 +231,36 @@ passwordInput.addEventListener("input", validatePassword);
 formSubmit.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  successMessage.style.display = "flex";
-  setTimeout(function () {
-    window.location.reload();
-  }, 2000);
+  const emailValue = email.value.trim();
+  const passwordValue = passwordInput.value.trim();
+
+  // Check if inputs are empty and add outline and error message if they are
+  if (emailValue === "") {
+    email.style.outline = "0.5px solid #D51820";
+    inValidEMail.style.visibility = "visible";
+  } else {
+    email.style.outline = "0.5px solid #29A643";
+    inValidEMail.style.visibility = "hidden";
+  }
+
+  if (passwordValue === "") {
+    passwordInput.style.outline = "0.5px solid #D51820";
+    length.classList.toggle("error", true);
+  } else {
+    validatePassword();
+  }
+
+  // Submit form if both inputs are not empty and valid
+  if (
+    emailValue !== "" &&
+    passwordValue !== "" &&
+    registerBtn.disabled !== true
+  ) {
+    successMessage.style.display = "flex";
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
+  }
 });
 // carousel slider scripts for scrolling through the slides and adjusting the number of slides based on screen size
 // Dom Elements
