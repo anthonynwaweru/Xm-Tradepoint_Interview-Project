@@ -17,4 +17,4 @@ HTML
 CSS
 JS
 
-[Link to the live page](https://mellow-travesseiro-5ef0c4.netlify.app/){target="_blank"}
+[Link to the live page](https://mellow-travesseiro-5ef0c4.netlify.app/){target="_blank" rel="noopener"}
