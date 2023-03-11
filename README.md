@@ -16,3 +16,5 @@ These are just two among the few that needs to be worked on.
 HTML
 CSS
 JS
+
+[Link to the live page](https://mellow-travesseiro-5ef0c4.netlify.app/)
