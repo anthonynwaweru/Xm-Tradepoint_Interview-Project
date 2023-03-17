@@ -1,4 +1,9 @@
 /*  mobile responsiveness styling */
+@media screen and (max-width: 1180px) {
+  .pricing-grid {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 1025px) {
   footer {
     padding: 52px 0;
@@ -14,9 +19,6 @@
   }
 }
 @media screen and (max-width: 963px) {
-  .article {
-    padding: 0 20px;
-  }
   .register {
     display: flex;
     flex-direction: column;
@@ -436,7 +438,9 @@ from max-width:479px  */
     width: 53px;
     height: 53px;
   }
-
+  .cross-container {
+    display: none;
+  }
   /* footer  */
   .footer-container-bottom {
     display: flex;

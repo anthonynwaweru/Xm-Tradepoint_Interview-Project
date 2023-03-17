@@ -247,9 +247,10 @@ const nextBtn = document.querySelector(".next-button");
 const slider = document.querySelector(".slider");
 const sliderItems = document.querySelector(".slider-items");
 const slides = document.querySelectorAll(".slider-item");
+const slide = document.querySelector(".slider-item");
 
 let slideIndex = 0;
-let slideWidth = 174;
+let slideWidth = slide.clientWidth;
 let slidesPerView = 5;
 
 // functions for showing slides, adjusting slides and scrolling through the slides
@@ -268,7 +269,7 @@ const adjustSlidesPerView = () => {
     slidesPerView = 3;
   } else if (containerWidth <= 992) {
     slidesPerView = 4;
-  } else if (containerWidth <= 1200) {
+  } else if (containerWidth <= 1140) {
     slidesPerView = 5;
   } else {
     slidesPerView = 5;
@@ -289,7 +290,7 @@ const nextSlide = () => {
 
 const prevSlide = () => {
   slideIndex--;
-  if (slideIndex < 0) {
+  if ((slideIndex = 0)) {
     slideIndex = slides.length - 1;
   }
   const translateX = -slideIndex * slideWidth;

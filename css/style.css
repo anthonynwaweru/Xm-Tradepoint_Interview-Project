@@ -25,6 +25,8 @@ body {
 header {
   background: #000000;
   height: 112px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navbar {
@@ -65,7 +67,7 @@ main {
   width: 100vw;
 }
 .hero-layout {
-  padding: 160px 30px 0 30px;
+  padding: 160px 20px 0 20px;
   position: relative;
   background: url(/assets/images/bg_main.png);
   background-position: center center center;
@@ -168,7 +170,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   /* grid-template-columns: repeat(auto-fit, minmax(202px, 1fr)); */
   gap: 18px;
 }
@@ -233,6 +235,10 @@ main {
   max-width: 100%;
   margin: 90px auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .article .article-content {
@@ -273,12 +279,13 @@ main {
 .article .article-gridbox {
   display: grid;
   gap: 20px;
-  grid-template-columns: 320px 328px;
-  grid-template-rows: 285px 285px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
   grid-template-areas:
     "speed pricing pricing"
     "speed tech dollar";
-  align-items: stretch;
+  justify-content: center;
+  justify-items: stretch;
 }
 
 .article .article-gridbox .gridbox-1 {
@@ -599,6 +606,7 @@ input[type="password"].success {
 }
 
 .mission-grid-boxes {
+  position: relative;
   display: grid;
   grid-template-areas:
     "auth commit"
@@ -638,6 +646,59 @@ input[type="password"].success {
   /* or 150% */
 
   color: #444444;
+}
+/* cross-lines styling */
+.grid-cross-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cross-container {
+  place-self: center;
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+}
+.lines {
+  max-width: 508.19px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.inner-line {
+  width: 22.59px;
+  height: 1px;
+  background: #cdcdcd;
+}
+.horizontal-line {
+  width: 234.89px;
+  height: 1px;
+  background: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+.vertical-line {
+  width: 508.19px;
+  height: 1px;
+  background: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.red-dot {
+  position: absolute;
+
+  width: 2.26px;
+  height: 2.26px;
+  border-radius: 50%;
+  background: #d51820;
 }
 
 /* footer section styling */
